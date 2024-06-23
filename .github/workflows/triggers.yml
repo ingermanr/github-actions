@@ -1,0 +1,22 @@
+name: triggers-practice
+run-name: triggers-practice
+on: 
+  issues:
+    types:
+      -opened
+  schedule:
+    - cron: '45 17 * * *'
+    
+
+jobs:
+  trigger-job:
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: checking
+        uses: actions/checkout@v4
+      - name: run-step
+        run: python print-hola-mundo.py
+      
+      
+      

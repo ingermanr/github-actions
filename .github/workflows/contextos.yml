@@ -1,0 +1,11 @@
+name: contextos_practice
+on:
+  push:
+    branches:
+      - 'aprendiendo-github-actions'
+jobs:
+  check-main:
+    if: ${{github.ref=='refs/heads/aprendiendo-github-actions'}}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo " Deplegando en la rama $GITHUB_REF"
