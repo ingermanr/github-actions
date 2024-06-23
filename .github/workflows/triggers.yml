@@ -1,0 +1,26 @@
+name: triggers practice
+
+on: 
+  pull_request:
+    types:
+      -[opened]
+    branches:
+      - "aprendiendo-github-actions"
+  issues:
+    types:[opened]
+  schedule:
+    - cron: "45 7,17 * * *"
+    
+
+jobs:
+  trigger-job:
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: checking
+        uses: actions/checkout@v4
+      - name: run-step
+        run: python print-hola-mundo.py
+      
+      
+      
