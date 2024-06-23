@@ -1,15 +1,11 @@
-name: triggers practice
-
+name: triggers-practice
+run-name: triggers-practice
 on: 
-  pull_request:
-    types:
-      -[opened]
-    branches:
-      - "aprendiendo-github-actions"
   issues:
-    types:[opened]
-  schedule:
-    - cron: "45 7,17 * * *"
+    types:
+      -opened
+  # schedule:
+  #   - cron: '45 7,17 * * *'
     
 
 jobs:
