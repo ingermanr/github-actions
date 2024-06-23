@@ -12,10 +12,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       # Runs a single command using the runners shell
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v3
-        with: 
-          python-version: "3.11"
       - name: script-runing
         run: python print-hola-mundo.py 
 
