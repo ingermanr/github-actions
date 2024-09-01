@@ -1,7 +1,7 @@
 # This is a basic workflow to help you get started with Actions
 
 name: hola-mundo
-
+run-name: GitHub Actions
 # Controls when the workflow will run
 on: 
   push:
@@ -22,7 +22,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Definir variable
-        uses: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
       - name: Set up Python 3.11
         uses: action/setup-python@v3
         with:
