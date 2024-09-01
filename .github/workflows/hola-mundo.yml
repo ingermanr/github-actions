@@ -3,20 +3,27 @@
 name: hola-mundo
 
 # Controls when the workflow will run
-on: [push]
+on: 
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
   # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  hola-mundo: 
+  # This workflow contains a single job called "hola-mundo"
+  hola-mundo: # job's name
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # maquina en la que correra
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-
+      - name: Set up Python 3.11
+      - uses: action/setup-python@v3
+        with:
+          python-version: "3.11"
       # Runs a single command using the runners shell
       - name: script-runing
         run: python print-hola-mundo.py 
