@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checking
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: run-step
         run: python print-hola-mundo.py
       
